@@ -54,12 +54,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }))
 
+const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+  padding: theme.spacing(0) + ' !important',
+}))
+
 const Header = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Container maxWidth="lg">
-          <Toolbar>
+          <StyledToolbar>
             <IconButton
               size="large"
               edge="start"
@@ -92,7 +96,7 @@ const Header = () => {
                 onChange={(e) => console.log(e.target.value)}
               />
             </Search>
-          </Toolbar>
+          </StyledToolbar>
         </Container>
       </AppBar>
     </Box>
