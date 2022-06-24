@@ -58,11 +58,15 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   padding: theme.spacing(0) + ' !important',
 }))
 
-const Header = () => {
+const Header = ({ onInputChange }) => {
+  const onSearchInputChange = (e) => {
+    onInputChange(e.target.value)
+  }
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Container maxWidth="lg">
+        <Container maxWidth="xl">
           <StyledToolbar>
             <IconButton
               size="large"
@@ -93,7 +97,7 @@ const Header = () => {
               <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
-                onChange={(e) => console.log(e.target.value)}
+                onChange={onSearchInputChange}
               />
             </Search>
           </StyledToolbar>
