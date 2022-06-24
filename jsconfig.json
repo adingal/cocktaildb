@@ -7,7 +7,9 @@
       "assets/*": ["./src/assets/*"],
       "components/*": ["./src/components/*"],
       "layout/*": ["./src/layout/*"],
-      "theme/*": ["./src/theme/*"]
+      "theme/*": ["./src/theme/*"],
+      "atoms/*": ["./src/atoms/*"],
+      "store/*": ["./src/store/*"]
     }
   },
   "include": ["src/**/*"],
