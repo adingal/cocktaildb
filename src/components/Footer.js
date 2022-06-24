@@ -3,12 +3,7 @@ import { styled } from '@mui/material/styles'
 import { Box, Container, Typography } from '@mui/material'
 
 const StyledBox = styled(Box)(({ theme }) => ({
-  minHeight: 100,
-  flexGrow: 1,
-  position: 'fixed',
-  right: 0,
-  bottom: 0,
-  left: 0,
+  minHeight: 80,
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
@@ -20,7 +15,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
 const Footer = () => {
   return (
     <StyledBox>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Typography variant="body1">
           {new Date().getFullYear()} &copy; adingal
         </Typography>
