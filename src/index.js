@@ -9,7 +9,12 @@ import { createLogger } from 'redux-logger'
 import thunk from 'redux-thunk'
 
 const logger = createLogger()
-const store = createStore(reducers, applyMiddleware(thunk, logger))
+let store = createStore(reducers, applyMiddleware(thunk))
+
+// Re-assign store if development environment
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+  store = createStore(reducers, applyMiddleware(thunk, logger))
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
