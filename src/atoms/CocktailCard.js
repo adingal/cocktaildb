@@ -21,6 +21,7 @@ const CocktailCard = ({ drink }) => {
     strCategory: category,
     strDrinkThumb: image,
     strInstructions: instructions,
+    strAlcoholic: alcoholic,
   } = drink
   return (
     <StyledCard>
@@ -29,7 +30,9 @@ const CocktailCard = ({ drink }) => {
         <Typography gutterBottom variant="h5" component="div" sx={{ mb: 0 }}>
           {name}
         </Typography>
-        <StyledCategory variant="body2">{category}</StyledCategory>
+        <StyledCategory variant="body2">
+          {category} | {alcoholic}
+        </StyledCategory>
         <Typography variant="body1" color="text.secondary">
           {instructions}
         </Typography>
