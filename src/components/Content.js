@@ -19,8 +19,13 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 }))
 
 const Content = ({ drinks }) => {
+  const height =
+    window.innerWidth > 600
+      ? window.innerHeight - 144
+      : window.innerHeight - 139
+
   return (
-    <StyledBox>
+    <StyledBox sx={{ minHeight: height }}>
       <StyledContainer maxWidth="lg">
         <Masonry columns={{ xs: 1, sm: 2, md: 4 }} spacing={{ xs: 0, sm: 2 }}>
           {drinks.length > 0 &&
