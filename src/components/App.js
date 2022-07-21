@@ -4,6 +4,7 @@ import Layout from 'components/Layout'
 import Header from 'components/Header'
 import Content from 'components/Content'
 import Footer from 'components/Footer'
+import LoadingBackdrop from 'atoms/LoadingBackdrop'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchCocktail } from 'store/api'
@@ -11,6 +12,7 @@ import { fetchCocktail } from 'store/api'
 const App = () => {
   const [searchValue, setSearchValue] = useState('vodka')
   const drinks = useSelector((state) => state.cocktails.drinks)
+  const isLoading = useSelector((state) => state.cocktails.isLoading)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -27,8 +29,9 @@ const App = () => {
     <>
       <CssBaseline />
       <Layout>
+        <LoadingBackdrop isOpen={isLoading} />
         <Header onInputChange={setSearchValue} />
-        <Content drinks={drinks} />
+        <Content drinks={drinks} isLoading={isLoading} />
         <Footer />
       </Layout>
     </>
